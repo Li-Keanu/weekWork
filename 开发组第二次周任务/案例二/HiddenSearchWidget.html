@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Ant Design/iconfont.css">
+    <style>
+        * {
+            /* 内减模式 */
+            box-sizing: border-box;
+        }
+
+        body {
+        /* 渐变色 */
+        background-image: linear-gradient(skyblue, plum);
+        font-family: 'Roboto', sans-serif;
+        /* flex 适应窗口大小 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* vh,vw 跟随窗口改变大小 */
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        }
+
+        .search {
+        position: relative;
+        height: 50px;
+        }
+
+        .search .input {
+        background-color: rgb(255, 235, 245);
+        border: 0;
+        font-size: 18px;
+        padding: 15px;
+        height: 50px;
+        width: 50px;
+        transition: width 0.3s ease;
+        }
+
+        .btn {
+        background-color: skyblue;
+        border: 0;
+        cursor: pointer;
+        font-size: 24px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 50px;
+        transition: transform 0.3s ease;
+        }
+
+        .btn:focus,
+        .input:focus {
+        outline: none;
+        }
+
+        .search.active .input {
+        width: 200px;
+        }
+
+        .search.active .btn {
+        transform: translateX(198px);
+        }
+    </style>
+</head>
+<body>
+    <div class="search">
+        <input type="text" class="input" placeholder="Search...">
+        <button class="btn iconfont icon-arrowright">
+
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <script>
+        // querySelector() 方法返回文档中与指定选择器或选择器组匹配的第一个 Element对象。如果找不到匹配项，则返回null。
+        const search = document.querySelector('.search')
+        const btn = document.querySelector('.btn')
+        const input = document.querySelector('.input')
+
+        // EventTarget.addEventListener() 方法将指定的监听器注册到 EventTarget 上，当该对象触发指定的事件时，指定的回调函数就会被执行。
+        btn.addEventListener('click', () => {
+            // DOMTokenList 接口的 toggle() 方法从列表中删除一个给定的标记并返回 false。如果标记不存在，则添加并且函数返回 true。
+            search.classList.toggle('active')
+            // 将窗口显示在前
+            input.focus()
+        })
+    </script>
+</body>
+</html>

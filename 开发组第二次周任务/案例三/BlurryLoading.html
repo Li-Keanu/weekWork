@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+        font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        }
+
+        .bg {
+            background: url(https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2) no-repeat center;
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: calc(100vw + 60px);
+            height: calc(100vh + 60px);
+            /* 当元素之间重叠的时候，z-index 较大的元素会覆盖较小的元素在上层进行显示。 */
+            z-index: -1;
+            /* 将高斯模糊应用于输出图片。可以增加图片的模糊度 */
+            filter: blur(0px);
+        }
+
+        .loading {
+            font-size: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <section class="bg"></section>
+    <div class="loading">0%</div>
+
+    <script>
+        const loadText = document.querySelector('.loading')
+        const bg = document.querySelector('.bg')
+ 
+        let load = 0
+
+        // 重复调用一个函数或执行一个代码片段，在每次调用之间具有固定的时间间隔。
+        let int = setInterval(blurring, 30)
+
+        function blurring() {
+            load++
+            if(load > 99) {
+                // 可取消先前通过 setInterval() 设置的重复定时任务。
+                clearInterval(int)
+            }
+
+            loadText.innerText = `${load}%`
+            loadText.style.opacity = scale(load, 0, 100, 1, 0)
+            bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+        }
+
+        const scale = (num, in_min, in_max, out_min, out_max) => {
+        return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
+        }
+    </script>
+</body>
+</html>
