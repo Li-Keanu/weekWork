@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Ant Design/iconfont.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .key {
+            border-bottom: 3px solid rgb(252, 222, 227);
+            background-color: #b3e5f3;
+            box-shadow: 1px 1px 3px rgba(0,0,0,.1);
+            display: inline-flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            flex-direction: column;
+            margin: 10px;
+            min-width: 150px;
+            color: #fff;
+            position: relative;
+        }
+
+        /* small 使文本的字体变小一号。 */
+        .key small {
+            position: absolute;
+            top: -24px;
+            left: 0;
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .iconfont {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id = "insert">
+        <div class="key iconfont icon-smile">
+            Press any key to get the keyCode
+        </div>
+    </div>
+
+    <script>
+        // Document的方法 getElementById()返回一个匹配特定 ID的元素。由于元素的 ID 在大部分情况下要求是独一无二的，这个方法自然而然地成为了一个高效查找特定元素的方法。
+        const insert = document.getElementById('insert')
+
+        window.addEventListener('keydown', (event) => {
+            insert.innerHTML = 
+            `
+            <div class = "key">
+                ${event.key === ' ' ? 'space' : event.key}
+                <small>Key</small>
+            </div>
+            <div class = "key">
+                ${event.keyCode}
+                <small>Key-Code🐎</small>
+            </div>
+            <div class = "key">
+                ${event.code}
+                <small>Key-Name</small>
+            </div>
+            `
+        })
+    </script>
+</body>
+</html>
