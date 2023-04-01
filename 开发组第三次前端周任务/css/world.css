@@ -1,0 +1,57 @@
+p {
+    height: 30px;
+}
+
+.mainland {
+    position: relative;
+    height: 867px;
+    background-image: url(../images/world/bg1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    line-height: 467px;
+}
+
+.mainland .title {
+    margin: 0 auto;
+    width: 600px;
+    height: 300px;
+}
+
+.mainland h2 {
+    font-size: 70px;
+    font-weight: 400;
+    color: #fff;
+    user-select: none;
+}
+
+.mainland .left{
+    position: absolute;
+    left: 38%;
+    top: 40%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    user-select: none;
+}
+
+.mainland .right {
+    position: absolute;
+    left: 50%;
+    top: 39%;
+    transform: translate(-50%,-50%);
+    transform: rotate(180deg);
+    width: 400px;
+    user-select: none;
+}
+
+.mainland .text {
+    /* background-color: skyblue; */
+    margin: 0 auto;
+    height: 300px;
+    width: 700px;
+    text-align: center;
+    line-height: 250px;
+    color: #fff;
+    font-weight: 600;
+    user-select: none;
+}
