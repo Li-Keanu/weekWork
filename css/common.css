@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.active {
+    border-top: 4px solid #fff;
+}
+
+/* 头部 */
+.header {
+    height: 80px;
+    background: #2e2626;
+}
+
+.header .logo {
+    float: left;
+    margin-left: 100px;
+    margin-right: 200px;
+    left: 100px;
+    height: 80px;
+    width: 150px;
+    /* background-color: skyblue; */
+}
+
+.header .nav {
+    right: 0;
+    height: 80px;
+    /* background-color: skyblue; */
+}
+
+.header .nav li {
+    /* background-color: pink; */
+    float: left;
+    height: 80px;
+    width: 200px;
+    text-align: center;
+}
+
+.header .nav li a {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    line-height: 70px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.header .nav li a:hover {
+    color: skyblue;
+}
+
+.header .nav li span:nth-child(2) {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%,0%);
+    font-size: 15px;
+}
+
+.end {
+    position: relative;
+    height: 100px;
+    background-color: #000;
+}
+
+.end img {
+    position: absolute;
+    left: 700px;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+}
+
+.end .copy {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    text-align: center;
+    color: #fff;
+    user-select: none;
+}

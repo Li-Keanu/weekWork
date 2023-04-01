@@ -1,0 +1,92 @@
+.home {
+    height: 867px;
+    background-image: url(../images/background-index.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%, 100%;
+}
+
+.home h2 {
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+    margin-bottom: 50px;
+    font-size: 45px;
+    font-weight: 400;
+    user-select: none;
+}
+
+.home h2 img {
+    width: 600px;
+}
+
+.home h2 img:nth-child(2) {
+    transform: rotate(180deg);
+}
+
+.home .nav {
+    background-color: skyblue;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.home .nav li {
+    position: relative;
+    float: left;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.home .nav .mengde {
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.home .nav .mengde:hover {
+    transform: translate(5px,-5px);
+    box-shadow: 0px 0px 20px #292727;
+}
+
+.home .nav .liyue {
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.home .nav .liyue:hover {
+    transform: translate(5px,-5px);
+    box-shadow: 0px 0px 20px #292727;
+}
+
+.home .nav .daoqi {
+    transition: all 0.4s;
+    overflow: hidden;
+}
+
+.home .nav .daoqi:hover {
+    transform: translate(5px,-5px);
+    box-shadow: 0px 0px 20px #292727;
+}
+
+.home .nav a img {
+    width: 200px;
+}
+
+.home .nav h2 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.home .nav .role {
+    position: absolute;
+    top: -62px;
+    left: 0;
+    transition: all 0.4s;
+}
+
+.home .nav .role:hover {
+    transform: scale(1.1);
+}
+
